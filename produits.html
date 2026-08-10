@@ -7,7 +7,8 @@
   <meta name="description" content="Découvrez les 4 collections été de Rue d&rsquo;Été : Riviera, Jardin Secret, Coucher de Soleil et Rue Bohème.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%E2%98%80%EF%B8%8F</text></svg>">
 </head>
@@ -18,7 +19,29 @@
       <a href="index.html" class="logo"><span>Rue d&rsquo;</span><span class="dot">Été</span></a>
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="produits.html" class="nav-link active">Produits</a>
+        <div class="nav-item">
+          <a href="produits.html" class="nav-link active">Produits</a>
+          <button class="mega-toggle" aria-label="Voir les collections" aria-expanded="false">▾</button>
+          <div class="mega-menu">
+            <a href="produits.html#riviera" class="mega-item">
+              <span class="mega-swatch" style="background:#17BEBB;"></span>
+              <span class="mega-text"><strong>Riviera</strong><small>Lin &amp; rayures marines</small></span>
+            </a>
+            <a href="produits.html#jardin" class="mega-item">
+              <span class="mega-swatch" style="background:#FF4D8D;"></span>
+              <span class="mega-text"><strong>Jardin Secret</strong><small>Fleuris vifs &amp; légers</small></span>
+            </a>
+            <a href="produits.html#soleil-couchant" class="mega-item">
+              <span class="mega-swatch" style="background:#FF8C42;"></span>
+              <span class="mega-text"><strong>Coucher de Soleil</strong><small>Robes fluides, tons chauds</small></span>
+            </a>
+            <a href="produits.html#boheme" class="mega-item">
+              <span class="mega-swatch" style="background:#FFD23F;"></span>
+              <span class="mega-text"><strong>Rue Bohème</strong><small>Imprimés street, esprit Marais</small></span>
+            </a>
+            <a href="produits.html" class="mega-all">Voir toute la boutique →</a>
+          </div>
+        </div>
       </nav>
       <div class="header-actions">
         <button class="icon-btn" aria-label="Recherche">🔍</button>

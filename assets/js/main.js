@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', isOpen);
       toggle.textContent = isOpen ? '✕' : '☰';
     });
-    nav.querySelectorAll('.nav-link').forEach(link => {
+    nav.querySelectorAll('.nav-link, .mega-item, .mega-all').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
         toggle.textContent = '☰';
@@ -54,8 +54,35 @@ document.addEventListener('DOMContentLoaded', () => {
     tabs.forEach(tab => {
       tab.addEventListener('click', () => activateCollection(tab.dataset.key));
     });
-    activateCollection(tabs[0].dataset.key);
+    const hashKey = location.hash.replace('#', '');
+    const matchesTab = [...tabs].some(t => t.dataset.key === hashKey);
+    activateCollection(matchesTab ? hashKey : tabs[0].dataset.key);
   }
+
+  /* Mega-menu (Produits dropdown): click-to-toggle for touch devices,
+     alongside the CSS :hover/:focus-within behavior for pointer users. */
+  document.querySelectorAll('.nav-item').forEach(item => {
+    const megaToggle = item.querySelector('.mega-toggle');
+    if (!megaToggle) return;
+    megaToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = item.classList.toggle('open');
+      megaToggle.setAttribute('aria-expanded', isOpen);
+    });
+  });
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-item.open').forEach(item => {
+      if (!item.contains(e.target)) {
+        item.classList.remove('open');
+        item.querySelector('.mega-toggle')?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-item.open').forEach(item => item.classList.remove('open'));
+    }
+  });
 
   /* Scroll reveal — anything already in view at load is shown immediately
      rather than waiting on the async observer callback; only elements
