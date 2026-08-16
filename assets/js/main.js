@@ -1,4 +1,21 @@
+/* Photo fallback: if a real photo fails to load, hide it so the warm
+   gradient behind it (see .photo-tile in style.css) shows through
+   instead of a broken-image icon. 'error' doesn't bubble, so capture. */
+document.addEventListener('error', (e) => {
+  if (e.target.tagName === 'IMG' && e.target.closest('.photo-tile')) {
+    e.target.classList.add('img-broken');
+  }
+}, true);
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* Catch photos that already failed before the listener above attached
+     (this script loads after the images in document order). */
+  document.querySelectorAll('.photo-tile img').forEach(img => {
+    if (img.complete && img.naturalWidth === 0) {
+      img.classList.add('img-broken');
+    }
+  });
 
   /* Mobile nav toggle */
   const toggle = document.querySelector('.menu-toggle');
@@ -17,6 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* Wishlist heart toggle */
+  document.querySelectorAll('.wishlist-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      btn.textContent = btn.classList.contains('active') ? '♥' : '♡';
+    });
+  });
 
   /* Scroll reveal — anything already in view at load is shown instantly
      rather than waiting on the async observer callback; only elements
@@ -43,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* Newsletter form (front-end only) */
-  const form = document.querySelector('.newsletter-form-brut');
+  const form = document.querySelector('.newsletter-form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -51,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = form.querySelector('button');
       if (input && input.value) {
         const original = btn.textContent;
-        btn.textContent = 'C’EST FAIT ✓';
+        btn.textContent = 'Merci ✓';
         input.value = '';
         setTimeout(() => { btn.textContent = original; }, 2500);
       }
