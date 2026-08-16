@@ -1,21 +1,4 @@
-/* Photo fallback: if a real photo fails to load, hide it so the warm
-   gradient behind it (see .photo-tile in style.css) shows through
-   instead of a broken-image icon. 'error' doesn't bubble, so capture. */
-document.addEventListener('error', (e) => {
-  if (e.target.tagName === 'IMG' && e.target.closest('.photo-tile')) {
-    e.target.classList.add('img-broken');
-  }
-}, true);
-
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* Catch photos that already failed before the listener above attached
-     (this script loads after the images in document order). */
-  document.querySelectorAll('.photo-tile img').forEach(img => {
-    if (img.complete && img.naturalWidth === 0) {
-      img.classList.add('img-broken');
-    }
-  });
 
   /* Mobile nav toggle */
   const toggle = document.querySelector('.menu-toggle');
@@ -33,6 +16,57 @@ document.addEventListener('DOMContentLoaded', () => {
         toggle.textContent = '☰';
       });
     });
+  }
+
+  /* Mega-menu: click-to-toggle for touch devices, alongside the CSS
+     :hover/:focus-within behavior for pointer users. On mobile this
+     trigger is hidden — a native <details> accordion takes over. */
+  document.querySelectorAll('.nav-item').forEach(item => {
+    const trigger = item.querySelector('.nav-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      item.classList.toggle('open');
+    });
+  });
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-item.open').forEach(item => {
+      if (!item.contains(e.target)) item.classList.remove('open');
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-item.open').forEach(item => item.classList.remove('open'));
+    }
+  });
+
+  /* Hero carousel — autoplay every 5s, pauses on hover, dots + click */
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  const carousel = document.querySelector('.hero-carousel');
+  if (slides.length > 1) {
+    let current = 0;
+    let timer = null;
+
+    function goTo(i) {
+      slides[current].classList.remove('active');
+      dots[current]?.classList.remove('active');
+      current = i;
+      slides[current].classList.add('active');
+      dots[current]?.classList.add('active');
+    }
+    function next() { goTo((current + 1) % slides.length); }
+    function start() { timer = setInterval(next, 5000); }
+    function stop() { clearInterval(timer); }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => { goTo(i); stop(); start(); });
+    });
+    if (carousel) {
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+    }
+    start();
   }
 
   /* Wishlist heart toggle */

@@ -14,51 +14,122 @@
 </head>
 <body>
 
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Livraison Offerte Dès 150€</span>
+      <span>© Maison Eva, 2026 — Merci de votre confiance</span>
+      <span>Retours Gratuits Sous 30 Jours</span>
+      <span>Livraison Offerte Dès 150€</span>
+      <span>© Maison Eva, 2026 — Merci de votre confiance</span>
+      <span>Retours Gratuits Sous 30 Jours</span>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="logo">Maison <em>Eva</em></a>
       <nav class="main-nav">
-        <a href="#top">Accueil</a>
-        <a href="#nouveautes">Boutique</a>
+        <a href="#top" class="nav-highlight">Soldes</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Boutique</button>
+          <div class="mega-panel">
+            <div class="mega-grid">
+              <div class="mega-col">
+                <h4>À la une</h4>
+                <ul>
+                  <li><a href="#nouveautes" class="strong">Meilleures ventes</a></li>
+                  <li><a href="#nouveautes" class="strong">Nouveautés</a></li>
+                  <li><a href="#nouveautes">Retour en stock</a></li>
+                  <li><a href="#collections">Femme</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Femme</h4>
+                <ul>
+                  <li><a href="#">Meilleures ventes</a></li>
+                  <li><a href="#">Nouveautés <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Tout voir</a></li>
+                  <li><a href="#">Mailles <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Hauts <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Jupes et robes <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Pantalons</a></li>
+                  <li><a href="#">Sweats</a></li>
+                  <li><a href="#">Chemises</a></li>
+                  <li><a href="#">Vestes</a></li>
+                  <li><a href="#">Accessoires <span class="mega-tag">NEW</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Homme</h4>
+                <ul>
+                  <li><a href="#">Meilleures ventes</a></li>
+                  <li><a href="#">Nouveautés <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Tout voir</a></li>
+                  <li><a href="#">Mailles <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">T-shirts <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Pantalons <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Sweats <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Chemises</a></li>
+                  <li><a href="#">Shorts <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Polos</a></li>
+                  <li><a href="#">Vestes</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Accessoires</h4>
+                <ul>
+                  <li><a href="#">Tout voir</a></li>
+                  <li><a href="#">Casquettes</a></li>
+                  <li><a href="#">Bijoux <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Sacs</a></li>
+                  <li><a href="#">Chaussures <span class="mega-tag">NEW</span></a></li>
+                  <li><a href="#">Ceintures</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <a href="#collections">Collections</a>
-        <a href="#about">À Propos</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">Archives</a>
+        <a href="#contact">À Propos</a>
       </nav>
+
+      <a href="#top" class="logo">Maison <em>Eva</em></a>
+
       <div class="header-actions">
+        <button class="icon-btn" aria-label="Favoris">♡</button>
+        <div class="lang-switch">FR <span>▾</span></div>
+        <button class="icon-btn" aria-label="Compte">⚉</button>
         <button class="icon-btn" aria-label="Recherche">⌕</button>
-        <button class="icon-btn" aria-label="Compte">☺</button>
         <button class="icon-btn" aria-label="Panier">⛃<span class="cart-count">0</span></button>
         <button class="menu-toggle" aria-label="Menu">☰</button>
       </div>
     </div>
   </header>
 
-  <section class="hero" id="top">
-    <div class="container hero-inner">
-      <div class="hero-copy reveal">
-        <span class="eyebrow">Collection Permanente</span>
-        <h1 class="hero-title">Sublimez votre silhouette,<br>cultivez l&rsquo;<em>élégance</em>.</h1>
-        <p class="hero-sub">Découvrez des pièces intemporelles, pensées pour la femme moderne. Matières nobles, coupes justes, palette neutre.</p>
-        <div class="hero-cta">
-          <a href="#nouveautes" class="btn btn-fill">Découvrir</a>
-          <a href="#collections" class="btn btn-line">Voir la collection</a>
-        </div>
+  <section class="hero-carousel" id="top">
+    <div class="hero-slide active">
+      <div class="ph"><span class="ph-label">Visuel hero — Soldes d&rsquo;été</span></div>
+      <div class="hero-slide-inner container">
+        <span class="eyebrow on-dark">Édition Limitée</span>
+        <h1 class="hero-big">Soldes d&rsquo;été</h1>
+        <p>Jusqu&rsquo;à -50% sur une sélection de pièces, en boutique et en ligne, dans la limite des stocks disponibles.</p>
+        <a href="#nouveautes" class="btn btn-on-dark">Découvrir</a>
       </div>
-      <div class="hero-visual reveal">
-        <div class="photo-tile hero-photo">
-          <img src="https://picsum.photos/seed/maisoneva-hero/900/1125" loading="lazy" alt="Femme portant un blazer Maison Eva">
-        </div>
-        <div class="trend-card">
-          <div class="photo-tile tc-photo">
-            <img src="https://picsum.photos/seed/maisoneva-trend/120/120" loading="lazy" alt="Sac cuir structuré">
-          </div>
-          <div>
-            <span class="tc-label">Tendance du moment</span>
-            <span class="tc-name">Sac Cuir Structuré</span>
-            <span class="tc-price">165€</span>
-          </div>
-        </div>
+    </div>
+    <div class="hero-slide">
+      <div class="ph"><span class="ph-label">Visuel hero — Nouvelle collection</span></div>
+      <div class="hero-slide-inner container">
+        <span class="eyebrow on-dark">Collection Permanente</span>
+        <h1 class="hero-big">L&rsquo;élégance s&rsquo;invite</h1>
+        <p>Découvrez des pièces intemporelles, pensées pour la femme moderne. Matières nobles, coupes justes.</p>
+        <a href="#collections" class="btn btn-on-dark">Voir la collection</a>
       </div>
+    </div>
+    <div class="hero-dots">
+      <button class="hero-dot active" aria-label="Diapositive 1"></button>
+      <button class="hero-dot" aria-label="Diapositive 2"></button>
     </div>
   </section>
 
@@ -69,59 +140,157 @@
           <span class="eyebrow">Boutique</span>
           <h2>Nouveautés</h2>
         </div>
-        <a href="#nouveautes" class="link-arrow">Voir tout →</a>
+        <button class="link-arrow">Voir tout →</button>
       </div>
 
       <div class="product-grid reveal">
+
         <div class="product-card">
-          <div class="product-media photo-tile">
+          <div class="product-media">
             <span class="product-badge">Nouveau</span>
             <button class="wishlist-btn" aria-label="Ajouter aux favoris">♡</button>
-            <img src="https://picsum.photos/seed/maisoneva-p1/600/800" loading="lazy" alt="Blazer Oversize">
+            <div class="ph ph-front"><span class="ph-label">Photo produit</span></div>
+            <div class="ph ph-back"><span class="ph-label">Vue alternative</span></div>
           </div>
           <div class="product-info">
             <span class="p-cat">Vestes</span>
-            <h3>Blazer Oversize</h3>
+            <h3>Blazer Structuré Oversize</h3>
             <span class="p-price">245€</span>
+            <div class="swatches">
+              <span class="swatch" style="background:#23180F"></span>
+              <span class="swatch" style="background:#CBBFAF"></span>
+              <span class="swatch" style="background:#F6F2EB"></span>
+            </div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-media photo-tile">
+          <div class="product-media">
             <button class="wishlist-btn" aria-label="Ajouter aux favoris">♡</button>
-            <img src="https://picsum.photos/seed/maisoneva-p2/600/800" loading="lazy" alt="Robe Portefeuille">
+            <div class="ph ph-front"><span class="ph-label">Photo produit</span></div>
+            <div class="ph ph-back"><span class="ph-label">Vue alternative</span></div>
           </div>
           <div class="product-info">
             <span class="p-cat">Robes</span>
-            <h3>Robe Portefeuille</h3>
+            <h3>Robe Portefeuille Soie</h3>
             <span class="p-price">189€</span>
+            <div class="swatches">
+              <span class="swatch" style="background:#23180F"></span>
+              <span class="swatch" style="background:#5B4A3E"></span>
+            </div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-media photo-tile">
+          <div class="product-media">
             <button class="wishlist-btn" aria-label="Ajouter aux favoris">♡</button>
-            <img src="https://picsum.photos/seed/maisoneva-p3/600/800" loading="lazy" alt="Pull Maille Fine">
+            <div class="ph ph-front"><span class="ph-label">Photo produit</span></div>
+            <div class="ph ph-back"><span class="ph-label">Vue alternative</span></div>
           </div>
           <div class="product-info">
             <span class="p-cat">Mailles</span>
-            <h3>Pull Maille Fine</h3>
+            <h3>Pull Maille Fine Col Rond</h3>
             <span class="p-price">95€</span>
+            <div class="swatches">
+              <span class="swatch" style="background:#CBBFAF"></span>
+              <span class="swatch" style="background:#E8DED4"></span>
+              <span class="swatch" style="background:#5B4A3E"></span>
+            </div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-media photo-tile">
+          <div class="product-media">
             <span class="product-badge">Nouveau</span>
             <button class="wishlist-btn" aria-label="Ajouter aux favoris">♡</button>
-            <img src="https://picsum.photos/seed/maisoneva-p4/600/800" loading="lazy" alt="Sac Cuir Structuré">
+            <div class="ph ph-front"><span class="ph-label">Photo produit</span></div>
+            <div class="ph ph-back"><span class="ph-label">Vue alternative</span></div>
           </div>
           <div class="product-info">
             <span class="p-cat">Sacs</span>
             <h3>Sac Cuir Structuré</h3>
             <span class="p-price">165€</span>
+            <div class="swatches">
+              <span class="swatch" style="background:#5B4A3E"></span>
+              <span class="swatch" style="background:#23180F"></span>
+            </div>
           </div>
         </div>
+
+        <div class="product-card">
+          <div class="product-media">
+            <button class="wishlist-btn" aria-label="Ajouter aux favoris">♡</button>
+            <div class="ph ph-front"><span class="ph-label">Photo produit</span></div>
+            <div class="ph ph-back"><span class="ph-label">Vue alternative</span></div>
+          </div>
+          <div class="product-info">
+            <span class="p-cat">Jupes</span>
+            <h3>Jupe Plissée Longue</h3>
+            <span class="p-price">129€</span>
+            <div class="swatches">
+              <span class="swatch" style="background:#CBBFAF"></span>
+              <span class="swatch" style="background:#F6F2EB"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-media">
+            <button class="wishlist-btn" aria-label="Ajouter aux favoris">♡</button>
+            <div class="ph ph-front"><span class="ph-label">Photo produit</span></div>
+            <div class="ph ph-back"><span class="ph-label">Vue alternative</span></div>
+          </div>
+          <div class="product-info">
+            <span class="p-cat">Chemises</span>
+            <h3>Chemise Popeline Ample</h3>
+            <span class="p-price">89€</span>
+            <div class="swatches">
+              <span class="swatch" style="background:#E8DED4"></span>
+              <span class="swatch" style="background:#5B4A3E"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card editorial-insert">
+          <div class="ph"><span class="ph-label">Visuel éditorial — atelier</span></div>
+          <span class="editorial-insert-caption">Maison Eva — Atelier Paris</span>
+        </div>
+
+        <div class="product-card">
+          <div class="product-media">
+            <button class="wishlist-btn" aria-label="Ajouter aux favoris">♡</button>
+            <div class="ph ph-front"><span class="ph-label">Photo produit</span></div>
+            <div class="ph ph-back"><span class="ph-label">Vue alternative</span></div>
+          </div>
+          <div class="product-info">
+            <span class="p-cat">Pantalons</span>
+            <h3>Pantalon Large Taille Haute</h3>
+            <span class="p-price">135€</span>
+            <div class="swatches">
+              <span class="swatch" style="background:#23180F"></span>
+              <span class="swatch" style="background:#CBBFAF"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-media">
+            <span class="product-badge">Nouveau</span>
+            <button class="wishlist-btn" aria-label="Ajouter aux favoris">♡</button>
+            <div class="ph ph-front"><span class="ph-label">Photo produit</span></div>
+            <div class="ph ph-back"><span class="ph-label">Vue alternative</span></div>
+          </div>
+          <div class="product-info">
+            <span class="p-cat">Vestes</span>
+            <h3>Trench Coat Ceinturé</h3>
+            <span class="p-price">275€</span>
+            <div class="swatches">
+              <span class="swatch" style="background:#CBBFAF"></span>
+              <span class="swatch" style="background:#5B4A3E"></span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -140,24 +309,20 @@
       <div class="section-head center reveal">
         <span class="eyebrow">Collections</span>
         <h2>Façonnées par catégorie</h2>
-        <p>Quatre univers, une même exigence de matière et de coupe.</p>
+        <p>Trois univers, une même exigence de matière et de coupe.</p>
       </div>
       <div class="category-strip reveal">
-        <a href="#nouveautes" class="category-tile photo-tile">
-          <img src="https://picsum.photos/seed/maisoneva-cat1/500/550" loading="lazy" alt="Robes">
-          <span>Robes</span>
+        <a href="#nouveautes" class="category-tile">
+          <div class="ph"><span class="ph-label">Catégorie — Robes</span></div>
+          <span class="cat-name">Robes</span>
         </a>
-        <a href="#nouveautes" class="category-tile photo-tile">
-          <img src="https://picsum.photos/seed/maisoneva-cat2/500/550" loading="lazy" alt="Vestes">
-          <span>Vestes</span>
+        <a href="#nouveautes" class="category-tile">
+          <div class="ph"><span class="ph-label">Catégorie — Mailles</span></div>
+          <span class="cat-name">Mailles</span>
         </a>
-        <a href="#nouveautes" class="category-tile photo-tile">
-          <img src="https://picsum.photos/seed/maisoneva-cat3/500/550" loading="lazy" alt="Sacs">
-          <span>Sacs</span>
-        </a>
-        <a href="#nouveautes" class="category-tile photo-tile">
-          <img src="https://picsum.photos/seed/maisoneva-cat4/500/550" loading="lazy" alt="Chaussures">
-          <span>Chaussures</span>
+        <a href="#nouveautes" class="category-tile">
+          <div class="ph"><span class="ph-label">Catégorie — Sacs</span></div>
+          <span class="cat-name">Sacs</span>
         </a>
       </div>
     </div>
