@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement — Maison Eva</title>
+  <meta name="description" content="Maison Eva : finalisez votre commande.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23F6F2EB%22/><text x=%2250%22 y=%2270%22 font-size=%2260%22 fill=%22%235B4A3E%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-style=%22italic%22>E</text></svg>">
+  <script src="assets/js/products.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+</head>
+<body>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Livraison Offerte Dès 150€</span>
+      <span>© Maison Eva, 2026 — Merci de votre confiance</span>
+      <span>Retours Gratuits Sous 30 Jours</span>
+      <span>Livraison Offerte Dès 150€</span>
+      <span>© Maison Eva, 2026 — Merci de votre confiance</span>
+      <span>Retours Gratuits Sous 30 Jours</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <nav class="main-nav">
+        <a href="boutique.html" class="nav-highlight">Soldes</a>
+        <div class="nav-item">
+          <a href="boutique.html" class="nav-trigger">Boutique</a>
+        </div>
+        <a href="boutique.html">Collections</a>
+        <a href="boutique.html">Archives</a>
+        <a href="index.html#about">À Propos</a>
+      </nav>
+
+      <a href="index.html#top" class="logo">Maison <em>Eva</em></a>
+
+      <div class="header-actions">
+        <a href="favoris.html" class="icon-btn" aria-label="Favoris">♡<span class="wishlist-count">0</span></a>
+        <div class="lang-switch">FR <span>▾</span></div>
+        <button class="icon-btn account-btn" aria-label="Compte">⚉</button>
+        <button class="icon-btn search-trigger" aria-label="Recherche">⌕</button>
+        <a href="panier.html" class="icon-btn" aria-label="Panier">⛃<span class="cart-count">0</span></a>
+        <button class="menu-toggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-tight">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html#top">Accueil</a> / <a href="panier.html">Panier</a> / <span>Paiement</span></nav>
+      <h1 style="font-family:var(--font-display);font-weight:500;font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:40px;">Paiement</h1>
+
+      <div id="checkoutWrap"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Maison <em>Eva</em></div>
+          <p style="font-size:.9rem;color:var(--shadow);max-width:260px;">Prêt-à-porter féminin intemporel, façonné à Paris pour la femme moderne.</p>
+        </div>
+        <div>
+          <h5>Boutique</h5>
+          <ul>
+            <li><a href="boutique.html">Nouveautés</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="boutique.html">Meilleures ventes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Maison</h5>
+          <ul>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#about">Ateliers</a></li>
+            <li><a href="index.html#about">Carrières</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:contact@maisoneva.paris">contact@maisoneva.paris</a></li>
+            <li><a href="#">Paris, France</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Maison Eva — Tous droits réservés</span>
+        <span>Mentions légales · Confidentialité</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/paiement.js" defer></script>
+</body>
+</html>

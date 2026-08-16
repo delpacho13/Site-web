@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">Produit — Maison Eva</title>
-  <meta name="description" content="Maison Eva : découvrez le détail de nos pièces intemporelles.">
+  <title>Panier — Maison Eva</title>
+  <meta name="description" content="Maison Eva : votre panier.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -30,7 +30,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <nav class="main-nav">
-        <a href="index.html#top" class="nav-highlight">Soldes</a>
+        <a href="boutique.html" class="nav-highlight">Soldes</a>
 
         <div class="nav-item">
           <a href="boutique.html" class="nav-trigger">Boutique</a>
@@ -92,9 +92,9 @@
           </div>
         </div>
 
-        <a href="index.html#collections">Collections</a>
+        <a href="boutique.html">Collections</a>
         <a href="boutique.html">Archives</a>
-        <a href="index.html#contact">À Propos</a>
+        <a href="index.html#about">À Propos</a>
       </nav>
 
       <a href="index.html#top" class="logo">Maison <em>Eva</em></a>
@@ -104,7 +104,7 @@
         <div class="lang-switch">FR <span>▾</span></div>
         <button class="icon-btn account-btn" aria-label="Compte">⚉</button>
         <button class="icon-btn search-trigger" aria-label="Recherche">⌕</button>
-        <a href="panier.html" class="icon-btn" aria-label="Panier">⛃<span class="cart-count" id="cartCount">0</span></a>
+        <a href="panier.html" class="icon-btn" aria-label="Panier">⛃<span class="cart-count">0</span></a>
         <button class="menu-toggle" aria-label="Menu">☰</button>
       </div>
     </div>
@@ -112,38 +112,10 @@
 
   <section class="section-tight">
     <div class="container">
-      <nav class="breadcrumb" id="breadcrumb" aria-label="Fil d'ariane"></nav>
+      <nav class="breadcrumb"><a href="index.html#top">Accueil</a> / <span>Panier</span></nav>
+      <h1 style="font-family:var(--font-display);font-weight:500;font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:40px;">Votre panier</h1>
 
-      <div class="product-detail" id="productDetail">
-        <!-- Populated by assets/js/produit.js -->
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="related-wrap">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Boutique</span>
-          <h2>Vous aimerez aussi</h2>
-        </div>
-      </div>
-      <div class="product-grid" id="relatedGrid"></div>
-    </div>
-  </section>
-
-  <section class="newsletter" id="contact">
-    <div class="container">
-      <div>
-        <span class="eyebrow" style="color:rgba(246,242,235,.7);">Newsletter</span>
-        <h2>Ne manquez aucune nouveauté</h2>
-        <p>Inscrivez-vous et recevez 10% de réduction sur votre première commande.</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Votre adresse e-mail" required>
-          <button type="submit">S&rsquo;inscrire</button>
-        </form>
-        <p class="newsletter-fine">Désinscription possible à tout moment.</p>
-      </div>
+      <div id="cartWrap"></div>
     </div>
   </section>
 
@@ -186,6 +158,6 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/produit.js" defer></script>
+  <script src="assets/js/panier.js" defer></script>
 </body>
 </html>

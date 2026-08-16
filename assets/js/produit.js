@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   breadcrumbEl.innerHTML = `
     <a href="index.html#top">Accueil</a> /
-    <a href="index.html#nouveautes">Boutique</a> /
-    <a href="index.html#nouveautes">${product.cat}</a> /
+    <a href="boutique.html">Boutique</a> /
+    <a href="boutique.html?cat=${encodeURIComponent(product.cat)}">${product.cat}</a> /
     <span>${product.name}</span>`;
 
   const g = GARMENTS[product.garment];
@@ -48,8 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="pd-info">
       ${product.badge ? `<span class="product-badge" style="position:static;display:inline-block;margin-bottom:14px;">${product.badge}</span>` : ''}
-      <span class="eyebrow">${product.cat}</span>
-      <h1>${product.name}</h1>
+      <div class="pd-title-row">
+        <div>
+          <span class="eyebrow">${product.cat}</span>
+          <h1>${product.name}</h1>
+        </div>
+        <button class="wishlist-btn pd-wishlist" data-id="${product.id}" aria-label="Ajouter aux favoris">♡</button>
+      </div>
       <span class="pd-price">${product.price}€</span>
       <p class="pd-desc">${product.desc}</p>
 
@@ -84,6 +89,15 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>`;
 
+  /* Wishlist heart on the product page itself — reuses the same
+     delegated click handler in main.js (matches on .wishlist-btn +
+     data-id), this just sets the correct initial state on render. */
+  const pdWishlistBtn = detailEl.querySelector('.pd-wishlist');
+  if (pdWishlistBtn && typeof WishlistStore !== 'undefined' && WishlistStore.has(product.id)) {
+    pdWishlistBtn.classList.add('active');
+    pdWishlistBtn.textContent = '♥';
+  }
+
   /* Face / Dos toggle */
   const front = detailEl.querySelector('.pd-view-front');
   const back = detailEl.querySelector('.pd-view-back');
@@ -97,19 +111,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* Color swatch selection (visual only) */
+  /* Color swatch selection */
+  let selectedColor = product.swatches[0];
   detailEl.querySelectorAll('.pd-swatch').forEach(sw => {
     sw.addEventListener('click', () => {
       detailEl.querySelectorAll('.pd-swatch').forEach(s => s.classList.remove('active'));
       sw.classList.add('active');
+      selectedColor = sw.style.background;
     });
   });
 
   /* Size selection */
+  let selectedSize = sizes[2];
   detailEl.querySelectorAll('.size-pill').forEach(pill => {
     pill.addEventListener('click', () => {
       detailEl.querySelectorAll('.size-pill').forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
+      selectedSize = pill.textContent;
     });
   });
 
@@ -123,11 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* Add to cart — front-end only, bumps the header cart count */
-  const cartCount = document.getElementById('cartCount');
+  /* Add to cart — persisted via CartStore (localStorage); the header
+     badge updates itself through the 'cart:change' event. */
   const addBtn = detailEl.querySelector('.pd-add');
   addBtn.addEventListener('click', () => {
-    if (cartCount) cartCount.textContent = String(parseInt(cartCount.textContent, 10) + qty);
+    if (typeof CartStore !== 'undefined') {
+      CartStore.add(product.id, qty, selectedSize, selectedColor);
+    }
     const original = addBtn.textContent;
     addBtn.textContent = 'Ajouté ✓';
     setTimeout(() => { addBtn.textContent = original; }, 1800);
