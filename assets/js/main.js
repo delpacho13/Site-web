@@ -62,26 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* Mega-menu: click-to-toggle for touch devices, alongside the CSS
-     :hover/:focus-within behavior for pointer users. On mobile this
-     trigger is hidden — a native <details> accordion takes over. */
-  document.querySelectorAll('.nav-item').forEach(item => {
-    const trigger = item.querySelector('.nav-trigger');
-    if (!trigger) return;
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      item.classList.toggle('open');
-    });
-  });
-  document.addEventListener('click', (e) => {
-    document.querySelectorAll('.nav-item.open').forEach(item => {
-      if (!item.contains(e.target)) item.classList.remove('open');
-    });
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.nav-item.open').forEach(item => item.classList.remove('open'));
-    }
+  /* Every mega-menu subcategory link points to the boutique filtered
+     by its own label, so every button leads somewhere real instead of
+     a dead "#" — including categories we don't stock yet, which the
+     boutique page shows as an honest empty state rather than a
+     broken link. Links with a real href (the "À la une" column) are
+     left untouched. */
+  document.querySelectorAll('.mega-col a[href="#"]').forEach(a => {
+    const label = a.childNodes[0] && a.childNodes[0].nodeType === Node.TEXT_NODE
+      ? a.childNodes[0].textContent.trim()
+      : a.textContent.trim();
+    a.href = `boutique.html?cat=${encodeURIComponent(label)}`;
   });
 
   /* Hero carousel — autoplay every 5s, pauses on hover, dots + click */

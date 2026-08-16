@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maison Eva — Élégance intemporelle pour la femme moderne</title>
-  <meta name="description" content="Maison Eva : prêt-à-porter féminin intemporel. Pièces raffinées, coupes justes, palette neutre chaude. Découvrez la collection.">
+  <title>Boutique — Maison Eva</title>
+  <meta name="description" content="Maison Eva : toutes nos pièces, par catégorie.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -29,7 +29,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <nav class="main-nav">
-        <a href="#top" class="nav-highlight">Soldes</a>
+        <a href="boutique.html" class="nav-highlight">Soldes</a>
 
         <div class="nav-item">
           <a href="boutique.html" class="nav-trigger">Boutique</a>
@@ -91,12 +91,12 @@
           </div>
         </div>
 
-        <a href="#collections">Collections</a>
+        <a href="boutique.html">Collections</a>
         <a href="boutique.html">Archives</a>
-        <a href="#about">À Propos</a>
+        <a href="index.html#about">À Propos</a>
       </nav>
 
-      <a href="#top" class="logo">Maison <em>Eva</em></a>
+      <a href="index.html#top" class="logo">Maison <em>Eva</em></a>
 
       <div class="header-actions">
         <button class="icon-btn" aria-label="Favoris">♡</button>
@@ -109,89 +109,41 @@
     </div>
   </header>
 
-  <section class="hero-carousel" id="top">
-    <div class="hero-slide active">
-      <div class="ph ph-hero"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M76,70 Q100,58 124,70 L117,138 Q100,148 83,138 Z"/><path d="M83,138 Q100,148 117,138 L129,228 Q100,241 71,228 Z"/><path d="M80,70 L84,52"/><path d="M120,70 L116,52"/><path d="M80,74 L118,132"/></svg></div>
-      <div class="hero-slide-inner container">
-        <span class="eyebrow on-dark">Édition Limitée</span>
-        <h1 class="hero-big">Soldes d&rsquo;été</h1>
-        <p>Jusqu&rsquo;à -50% sur une sélection de pièces, en boutique et en ligne, dans la limite des stocks disponibles.</p>
-        <a href="boutique.html" class="btn btn-on-dark">Découvrir</a>
-      </div>
-    </div>
-    <div class="hero-slide">
-      <div class="ph ph-hero"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M70,72 Q100,56 130,72 L142,180 Q100,196 58,180 Z"/><path d="M58,80 L34,92 L42,172 L60,162 Z"/><path d="M142,80 L166,92 L158,172 L140,162 Z"/><path d="M79,68 L100,122 L121,68"/><circle cx="100" cy="142" r="2.4" fill="#5B4A3E"/><circle cx="100" cy="158" r="2.4" fill="#5B4A3E"/></svg></div>
-      <div class="hero-slide-inner container">
-        <span class="eyebrow on-dark">Collection Permanente</span>
-        <h1 class="hero-big">L&rsquo;élégance s&rsquo;invite</h1>
-        <p>Découvrez des pièces intemporelles, pensées pour la femme moderne. Matières nobles, coupes justes.</p>
-        <a href="boutique.html" class="btn btn-on-dark">Voir la collection</a>
-      </div>
-    </div>
-    <div class="hero-dots">
-      <button class="hero-dot active" aria-label="Diapositive 1"></button>
-      <button class="hero-dot" aria-label="Diapositive 2"></button>
-    </div>
-    <a href="produit.html?id=4" class="trend-card">
-      <div class="ph tc-photo"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60,120 Q60,110 70,110 L130,110 Q140,110 140,120 L140,190 Q140,200 130,200 L70,200 Q60,200 60,190 Z"/><path d="M76,110 Q76,74 100,74 Q124,74 124,110"/><rect x="93" y="107" width="14" height="8" rx="2"/><path d="M60,150 L140,150" stroke-dasharray="1,5" stroke-width="1"/></svg></div>
-      <div>
-        <span class="tc-label">Tendance du moment</span>
-        <span class="tc-name">Sac Cuir Structuré</span>
-        <span class="tc-price">165€</span>
-      </div>
-    </a>
-  </section>
-
-  <section class="section" id="nouveautes">
+  <section class="section-tight">
     <div class="container">
-      <div class="section-head reveal">
+      <nav class="breadcrumb"><a href="index.html#top">Accueil</a> / <span id="boutiqueTitle">Boutique</span></nav>
+
+      <div class="section-head">
         <div>
-          <span class="eyebrow">Boutique</span>
-          <h2>Nouveautés</h2>
+          <span class="eyebrow" id="boutiqueCount">&nbsp;</span>
+          <h1 style="font-family:var(--font-display);font-weight:500;font-size:clamp(1.9rem,3.2vw,2.6rem);">Boutique</h1>
         </div>
-        <a href="boutique.html" class="link-arrow">Voir tout →</a>
       </div>
 
-      <div class="product-grid reveal" id="productGrid"></div>
-    </div>
-  </section>
-
-  <section class="editorial section-alt" id="about">
-    <div class="container">
-      <div class="reveal">
-        <div class="brand-mark">Maison <em>Eva</em></div>
-        <p class="tagline">Élégant · Intemporel · Parisien</p>
+      <div class="filter-pills">
+        <a href="boutique.html" class="filter-pill" data-cat="all">Toutes</a>
+        <a href="boutique.html?cat=Vestes" class="filter-pill" data-cat="Vestes">Vestes</a>
+        <a href="boutique.html?cat=Robes" class="filter-pill" data-cat="Robes">Robes</a>
+        <a href="boutique.html?cat=Mailles" class="filter-pill" data-cat="Mailles">Mailles</a>
+        <a href="boutique.html?cat=Sacs" class="filter-pill" data-cat="Sacs">Sacs</a>
+        <a href="boutique.html?cat=Jupes" class="filter-pill" data-cat="Jupes">Jupes</a>
+        <a href="boutique.html?cat=Chemises" class="filter-pill" data-cat="Chemises">Chemises</a>
+        <a href="boutique.html?cat=Pantalons" class="filter-pill" data-cat="Pantalons">Pantalons</a>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="collections">
-    <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Collections</span>
-        <h2>Façonnées par catégorie</h2>
-        <p>Trois univers, une même exigence de matière et de coupe.</p>
-      </div>
-      <div class="category-strip reveal">
-        <a href="boutique.html?cat=Robes" class="category-tile">
-          <div class="ph ph-large"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M76,70 Q100,58 124,70 L117,138 Q100,148 83,138 Z"/><path d="M83,138 Q100,148 117,138 L129,228 Q100,241 71,228 Z"/><path d="M80,70 L84,52"/><path d="M120,70 L116,52"/><path d="M80,74 L118,132"/></svg></div>
-          <span class="cat-name">Robes</span>
-        </a>
-        <a href="boutique.html?cat=Mailles" class="category-tile">
-          <div class="ph ph-large"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M64,76 Q100,60 136,76 L141,188 Q100,199 59,188 Z"/><path d="M84,72 Q100,84 116,72"/><path d="M60,86 L36,98 L44,174 L66,166 Z"/><path d="M140,86 L164,98 L156,174 L134,166 Z"/><path d="M60,186 L140,186" stroke-width="2.2"/><path d="M40,168 L64,162" stroke-width="2.2"/><path d="M160,168 L136,162" stroke-width="2.2"/></svg></div>
-          <span class="cat-name">Mailles</span>
-        </a>
-        <a href="boutique.html?cat=Sacs" class="category-tile">
-          <div class="ph ph-large"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60,120 Q60,110 70,110 L130,110 Q140,110 140,120 L140,190 Q140,200 130,200 L70,200 Q60,200 60,190 Z"/><path d="M76,110 Q76,74 100,74 Q124,74 124,110"/><rect x="93" y="107" width="14" height="8" rx="2"/><path d="M60,150 L140,150" stroke-dasharray="1,5" stroke-width="1"/></svg></div>
-          <span class="cat-name">Sacs</span>
-        </a>
+      <div class="product-grid" id="boutiqueGrid" style="margin-top:44px;"></div>
+
+      <div class="boutique-empty" id="boutiqueEmpty" style="display:none;">
+        <p>Aucune pièce disponible pour l&rsquo;instant dans « <span class="empty-cat"></span> ».</p>
+        <p>De nouvelles pièces arrivent régulièrement — revenez bientôt, ou explorez le reste de la boutique.</p>
+        <a href="boutique.html" class="btn btn-fill">Voir toutes nos pièces</a>
       </div>
     </div>
   </section>
 
   <section class="newsletter" id="contact">
     <div class="container">
-      <div class="reveal">
+      <div>
         <span class="eyebrow" style="color:rgba(246,242,235,.7);">Newsletter</span>
         <h2>Ne manquez aucune nouveauté</h2>
         <p>Inscrivez-vous et recevez 10% de réduction sur votre première commande.</p>
@@ -215,16 +167,16 @@
           <h5>Boutique</h5>
           <ul>
             <li><a href="boutique.html">Nouveautés</a></li>
-            <li><a href="#collections">Collections</a></li>
+            <li><a href="boutique.html">Collections</a></li>
             <li><a href="boutique.html">Meilleures ventes</a></li>
           </ul>
         </div>
         <div>
           <h5>Maison</h5>
           <ul>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#about">Ateliers</a></li>
-            <li><a href="#about">Carrières</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#about">Ateliers</a></li>
+            <li><a href="index.html#about">Carrières</a></li>
           </ul>
         </div>
         <div>
@@ -243,5 +195,6 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/boutique.js" defer></script>
 </body>
 </html>
