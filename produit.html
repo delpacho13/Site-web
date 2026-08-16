@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maison Eva — Élégance intemporelle pour la femme moderne</title>
-  <meta name="description" content="Maison Eva : prêt-à-porter féminin intemporel. Pièces raffinées, coupes justes, palette neutre chaude. Découvrez la collection.">
+  <title id="pageTitle">Produit — Maison Eva</title>
+  <meta name="description" content="Maison Eva : découvrez le détail de nos pièces intemporelles.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -29,7 +29,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <nav class="main-nav">
-        <a href="#top" class="nav-highlight">Soldes</a>
+        <a href="index.html#top" class="nav-highlight">Soldes</a>
 
         <div class="nav-item">
           <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Boutique</button>
@@ -38,10 +38,10 @@
               <div class="mega-col">
                 <h4>À la une</h4>
                 <ul>
-                  <li><a href="#nouveautes" class="strong">Meilleures ventes</a></li>
-                  <li><a href="#nouveautes" class="strong">Nouveautés</a></li>
-                  <li><a href="#nouveautes">Retour en stock</a></li>
-                  <li><a href="#collections">Femme</a></li>
+                  <li><a href="index.html#nouveautes" class="strong">Meilleures ventes</a></li>
+                  <li><a href="index.html#nouveautes" class="strong">Nouveautés</a></li>
+                  <li><a href="index.html#nouveautes">Retour en stock</a></li>
+                  <li><a href="index.html#collections">Femme</a></li>
                 </ul>
               </div>
               <div class="mega-col">
@@ -91,99 +91,49 @@
           </div>
         </div>
 
-        <a href="#collections">Collections</a>
-        <a href="#about">Archives</a>
-        <a href="#contact">À Propos</a>
+        <a href="index.html#collections">Collections</a>
+        <a href="index.html#about">Archives</a>
+        <a href="index.html#contact">À Propos</a>
       </nav>
 
-      <a href="#top" class="logo">Maison <em>Eva</em></a>
+      <a href="index.html#top" class="logo">Maison <em>Eva</em></a>
 
       <div class="header-actions">
         <button class="icon-btn" aria-label="Favoris">♡</button>
         <div class="lang-switch">FR <span>▾</span></div>
         <button class="icon-btn" aria-label="Compte">⚉</button>
         <button class="icon-btn" aria-label="Recherche">⌕</button>
-        <button class="icon-btn" aria-label="Panier">⛃<span class="cart-count">0</span></button>
+        <button class="icon-btn" aria-label="Panier">⛃<span class="cart-count" id="cartCount">0</span></button>
         <button class="menu-toggle" aria-label="Menu">☰</button>
       </div>
     </div>
   </header>
 
-  <section class="hero-carousel" id="top">
-    <div class="hero-slide active">
-      <div class="ph ph-hero"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M76,70 Q100,58 124,70 L117,138 Q100,148 83,138 Z"/><path d="M83,138 Q100,148 117,138 L129,228 Q100,241 71,228 Z"/><path d="M80,70 L84,52"/><path d="M120,70 L116,52"/><path d="M80,74 L118,132"/></svg></div>
-      <div class="hero-slide-inner container">
-        <span class="eyebrow on-dark">Édition Limitée</span>
-        <h1 class="hero-big">Soldes d&rsquo;été</h1>
-        <p>Jusqu&rsquo;à -50% sur une sélection de pièces, en boutique et en ligne, dans la limite des stocks disponibles.</p>
-        <a href="#nouveautes" class="btn btn-on-dark">Découvrir</a>
+  <section class="section-tight">
+    <div class="container">
+      <nav class="breadcrumb" id="breadcrumb" aria-label="Fil d'ariane"></nav>
+
+      <div class="product-detail" id="productDetail">
+        <!-- Populated by assets/js/produit.js -->
       </div>
-    </div>
-    <div class="hero-slide">
-      <div class="ph ph-hero"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M70,72 Q100,56 130,72 L142,180 Q100,196 58,180 Z"/><path d="M58,80 L34,92 L42,172 L60,162 Z"/><path d="M142,80 L166,92 L158,172 L140,162 Z"/><path d="M79,68 L100,122 L121,68"/><circle cx="100" cy="142" r="2.4" fill="#5B4A3E"/><circle cx="100" cy="158" r="2.4" fill="#5B4A3E"/></svg></div>
-      <div class="hero-slide-inner container">
-        <span class="eyebrow on-dark">Collection Permanente</span>
-        <h1 class="hero-big">L&rsquo;élégance s&rsquo;invite</h1>
-        <p>Découvrez des pièces intemporelles, pensées pour la femme moderne. Matières nobles, coupes justes.</p>
-        <a href="#collections" class="btn btn-on-dark">Voir la collection</a>
-      </div>
-    </div>
-    <div class="hero-dots">
-      <button class="hero-dot active" aria-label="Diapositive 1"></button>
-      <button class="hero-dot" aria-label="Diapositive 2"></button>
     </div>
   </section>
 
-  <section class="section" id="nouveautes">
+  <section class="section section-alt" id="related-wrap">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head">
         <div>
           <span class="eyebrow">Boutique</span>
-          <h2>Nouveautés</h2>
+          <h2>Vous aimerez aussi</h2>
         </div>
-        <button class="link-arrow">Voir tout →</button>
       </div>
-
-      <div class="product-grid reveal" id="productGrid"></div>
-    </div>
-  </section>
-
-  <section class="editorial section-alt" id="about">
-    <div class="container">
-      <div class="reveal">
-        <div class="brand-mark">Maison <em>Eva</em></div>
-        <p class="tagline">Élégant · Intemporel · Parisien</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="collections">
-    <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Collections</span>
-        <h2>Façonnées par catégorie</h2>
-        <p>Trois univers, une même exigence de matière et de coupe.</p>
-      </div>
-      <div class="category-strip reveal">
-        <a href="#nouveautes" class="category-tile">
-          <div class="ph ph-large"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M76,70 Q100,58 124,70 L117,138 Q100,148 83,138 Z"/><path d="M83,138 Q100,148 117,138 L129,228 Q100,241 71,228 Z"/><path d="M80,70 L84,52"/><path d="M120,70 L116,52"/><path d="M80,74 L118,132"/></svg></div>
-          <span class="cat-name">Robes</span>
-        </a>
-        <a href="#nouveautes" class="category-tile">
-          <div class="ph ph-large"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M64,76 Q100,60 136,76 L141,188 Q100,199 59,188 Z"/><path d="M84,72 Q100,84 116,72"/><path d="M60,86 L36,98 L44,174 L66,166 Z"/><path d="M140,86 L164,98 L156,174 L134,166 Z"/><path d="M60,186 L140,186" stroke-width="2.2"/><path d="M40,168 L64,162" stroke-width="2.2"/><path d="M160,168 L136,162" stroke-width="2.2"/></svg></div>
-          <span class="cat-name">Mailles</span>
-        </a>
-        <a href="#nouveautes" class="category-tile">
-          <div class="ph ph-large"><svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60,120 Q60,110 70,110 L130,110 Q140,110 140,120 L140,190 Q140,200 130,200 L70,200 Q60,200 60,190 Z"/><path d="M76,110 Q76,74 100,74 Q124,74 124,110"/><rect x="93" y="107" width="14" height="8" rx="2"/><path d="M60,150 L140,150" stroke-dasharray="1,5" stroke-width="1"/></svg></div>
-          <span class="cat-name">Sacs</span>
-        </a>
-      </div>
+      <div class="product-grid" id="relatedGrid"></div>
     </div>
   </section>
 
   <section class="newsletter" id="contact">
     <div class="container">
-      <div class="reveal">
+      <div>
         <span class="eyebrow" style="color:rgba(246,242,235,.7);">Newsletter</span>
         <h2>Ne manquez aucune nouveauté</h2>
         <p>Inscrivez-vous et recevez 10% de réduction sur votre première commande.</p>
@@ -206,15 +156,15 @@
         <div>
           <h5>Boutique</h5>
           <ul>
-            <li><a href="#nouveautes">Nouveautés</a></li>
-            <li><a href="#collections">Collections</a></li>
-            <li><a href="#nouveautes">Meilleures ventes</a></li>
+            <li><a href="index.html#nouveautes">Nouveautés</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#nouveautes">Meilleures ventes</a></li>
           </ul>
         </div>
         <div>
           <h5>Maison</h5>
           <ul>
-            <li><a href="#about">À propos</a></li>
+            <li><a href="index.html#about">À propos</a></li>
             <li><a href="#">Ateliers</a></li>
             <li><a href="#">Carrières</a></li>
           </ul>
@@ -235,5 +185,6 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/produit.js" defer></script>
 </body>
 </html>

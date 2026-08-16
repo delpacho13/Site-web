@@ -1,4 +1,48 @@
+const ATELIER_SVG = '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5B4A3E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="100" cy="140" rx="36" ry="14"/><path d="M64,140 L64,110 Q64,96 100,96 Q136,96 136,110 L136,140"/><path d="M100,96 L100,40"/><ellipse cx="100" cy="34" rx="7" ry="10"/></svg>';
+
+function productCardHTML(p) {
+  const g = GARMENTS[p.garment];
+  const badge = p.badge ? `<span class="product-badge">${p.badge}</span>` : '';
+  const swatches = p.swatches.map(c => `<span class="swatch" style="background:${c}"></span>`).join('');
+  return `
+    <a class="product-card" href="produit.html?id=${p.id}">
+      <div class="product-media">
+        ${badge}
+        <button class="wishlist-btn" aria-label="Ajouter aux favoris">♡</button>
+        <div class="ph ph-front">${g.front}</div>
+        <div class="ph ph-back">${g.back}</div>
+      </div>
+      <div class="product-info">
+        <span class="p-cat">${p.cat}</span>
+        <h3>${p.name}</h3>
+        <span class="p-price">${p.price}€</span>
+        <div class="swatches">${swatches}</div>
+      </div>
+    </a>`;
+}
+
+/* Renders the "Nouveautés" grid from PRODUCTS/GARMENTS (products.js),
+   with the editorial photo tile inserted after the 6th product to
+   match the asymmetric rhythm of the reference layout. */
+function renderProductGrid() {
+  const grid = document.getElementById('productGrid');
+  if (!grid || typeof PRODUCTS === 'undefined') return;
+  const editorialHTML = `
+    <div class="product-card editorial-insert">
+      <div class="ph ph-large">${ATELIER_SVG}</div>
+      <span class="editorial-insert-caption">Maison Eva — Atelier Paris</span>
+    </div>`;
+  let html = '';
+  PRODUCTS.forEach((p, i) => {
+    html += productCardHTML(p);
+    if (i === 5) html += editorialHTML;
+  });
+  grid.innerHTML = html;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  renderProductGrid();
 
   /* Mobile nav toggle */
   const toggle = document.querySelector('.menu-toggle');
@@ -69,12 +113,17 @@ document.addEventListener('DOMContentLoaded', () => {
     start();
   }
 
-  /* Wishlist heart toggle */
-  document.querySelectorAll('.wishlist-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
-      btn.textContent = btn.classList.contains('active') ? '♥' : '♡';
-    });
+  /* Wishlist heart toggle — delegated since product cards (and their
+     hearts) are rendered dynamically by renderProductGrid() above.
+     Product cards are now links to the product page, so this must
+     stop the click from also navigating. */
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.wishlist-btn');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    btn.classList.toggle('active');
+    btn.textContent = btn.classList.contains('active') ? '♥' : '♡';
   });
 
   /* Scroll reveal — anything already in view at load is shown instantly
